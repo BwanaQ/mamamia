@@ -14,54 +14,74 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>  </head>
     <script src="./js/scripts.js" async defer></script>
   <body>
-    <div id="menu">
-      <!--display menu-->
+    <div class="row">
+      <div id="menu">
+        <!--display menu-->
+      </div>
     </div>
-    <div> 
-      <h2>Order Pizza</h2>
-    </div> 
-    <form id="new-pizza-order">
-      <div id="new-pizzas">
-        <div class="new-pizza">
-          <div class="form-group">
-            <label for="size">Size</label>
-            <select name="size" id="size" form="new-pizza-order">
-              <option value="small">Small</option>
-              <option value="medium">Medium</option>
-              <option value="large">Large</option>
-              <option value="mega">Mega</option>
-            </select>
+    <div class="row">
+      <div class="col-4">
+        <div> 
+          <h2>Step 1: Order Pizza</h2>
+        </div> 
+        <form id="new-pizza-order">
+          <div id="new-pizzas">
+            <div class="new-pizza">
+              <div class="form-group">
+                <label for="size">Size</label>
+                <select name="size" id="size" form="new-pizza-order">
+                  <option value="small">Small</option>
+                  <option value="medium">Medium</option>
+                  <option value="large">Large</option>
+                  <option value="mega">Mega</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <fieldset>      
+                  <legend>Preferred Toppings</legend>      
+                  <input type="checkbox" name="toppings" value="pepperonni">Pepperonni<br>      
+                  <input type="checkbox" name="toppings" value="supreme">Supreme<br>      
+                  <input type="checkbox" name="toppings" value="hawaiian">Hawaiian<br>      
+                  <input type="checkbox" name="toppings" value="bbq">BBQ<br>      
+                  <input type="checkbox" name="toppings" value="prawn">Prawn<br>      
+                </fieldset> 
+              </div>
+              <div class="form-group">
+                <fieldset>
+                  <legend>Preferred Crust</legend>      
+                  <input type="radio" id="thin" name="crust" value="thin">
+                  <label for="thin">Thin</label><br>
+                  <input type="radio" id="medium" name="crust" value="medium">
+                  <label for="medium">Medium</label><br>
+                  <input type="radio" id="thick" name="crust" value="thick">
+                  <label for="thick">Thick</label>
+                </fieldset>   
+              </div>
+        
+            </div>
           </div>
-          <div class="form-group">
-            <fieldset>      
-              <legend>Preferred Toppings</legend>      
-              <input type="checkbox" name="toppings" value="pepperonni">Pepperonni<br>      
-              <input type="checkbox" name="toppings" value="supreme">Supreme<br>      
-              <input type="checkbox" name="toppings" value="hawaiian">Hawaiian<br>      
-              <input type="checkbox" name="toppings" value="bbq">BBQ<br>      
-              <input type="checkbox" name="toppings" value="prawn">Prawn<br>      
-            </fieldset> 
-          </div>
-          <div class="form-group">
-            <fieldset>
-              <legend>Preferred Crust</legend>      
-              <input type="radio" id="thin" name="crust" value="thin">
-              <label for="thin">Thin</label><br>
-              <input type="radio" id="medium" name="crust" value="medium">
-              <label for="medium">Medium</label><br>
-              <input type="radio" id="thick" name="crust" value="thick">
-              <label for="thick">Thick</label>
-            </fieldset>   
-          </div>
-    
+        
+          <span class="btn btn-primary" id="add-pizza">Another Pizza</span>
+        
+          <button type="submit" class="btn">Checkout</button>
+        </form>
+      </div>
+      <div class="col-4">
+        <div>
+          step2: Checkout
+        </div>
+        <div id="order">
+          <ul id="pizza-order">
+
+          </ul>
         </div>
       </div>
-    
-      <span class="btn btn-primary" id="add-pizza">Another Pizza</span>
-    
-      <button type="submit" class="btn">Checkout</button>
-    </form>
-    
+      <div class="col-4">
+        <div>
+          step3: Reciept
+        </div>
+      </div>
+    </div>
   </body>
 </html>
 

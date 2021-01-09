@@ -132,15 +132,20 @@ document.getElementById("menu").innerHTML = '<h2>Menu</h2>'+
   
       var inputtedSize = $("select#size").val();
       console.log(inputtedSize);
-      
+    
+      var inputtedCrust = $("input[name='crust']:checked").val();
+      console.log(inputtedCrust);
+  
       var inputtedToppings=$('input[name="toppings"]:checked').map(function(){
         return $(this).val();
       }).get();    
       console.log(inputtedToppings);
 
-      var inputtedCrust = $("input[name='crust']:checked").val();
-      console.log(inputtedCrust);
+      var newPizza = new Pizza(inputtedSize, inputtedCrust, inputtedToppings);
 
+      console.log(newPizza);
+
+      $("ul#pizza-order").append("<li><span>" + newPizza.pizzaSize + "</span></li>");
       /*var inputtedLastName = $("input#new-last-name").val();
   
       var newContact = new Contact(inputtedFirstName, inputtedLastName);
