@@ -130,16 +130,16 @@ document.getElementById("menu").innerHTML = '<h2>Menu</h2>'+
     $("form#new-pizza-order").submit(function(event) {
       event.preventDefault();
   
-      var size = $("select#size").val();
-      console.log(size);
+      var inputtedSize = $("select#size").val();
+      console.log(inputtedSize);
       
-      var toppings=$('input[name="toppings"]:checked').map(function(){
+      var inputtedToppings=$('input[name="toppings"]:checked').map(function(){
         return $(this).val();
       }).get();    
-      console.log(toppings);
+      console.log(inputtedToppings);
 
-      var crust = $("input[name='crust']:checked").val();
-      console.log(crust);
+      var inputtedCrust = $("input[name='crust']:checked").val();
+      console.log(inputtedCrust);
 
       /*var inputtedLastName = $("input#new-last-name").val();
   
