@@ -1,7 +1,12 @@
 
 //create empty order
-function Orders(pizzaSize,crustType,toppings){
-  this.order = [];
+order = [];
+
+
+function Pizza(pizzaSize,crustType,toppings){
+  this.pizzaSize = pizzaSize;
+  this.crustType = crustType;
+  this.toppings = toppings;
 }
 
 //create all Pizza constructors
@@ -120,3 +125,30 @@ document.getElementById("menu").innerHTML = '<h2>Menu</h2>'+
       <button type="submit" class="btn btn-success ">Proceed to checkout</button>
     </form>
     */
+
+   $(document).ready(function() {
+    $("form#new-pizza-order").submit(function(event) {
+      event.preventDefault();
+  
+      var size = $("select#size").val();
+      console.log(size);
+      
+      var toppings=$('input[name="toppings"]:checked').map(function(){
+        return $(this).val();
+      }).get();    
+      console.log(toppings);
+
+      var crust = $("input[name='crust']:checked").val();
+      console.log(crust);
+
+      /*var inputtedLastName = $("input#new-last-name").val();
+  
+      var newContact = new Contact(inputtedFirstName, inputtedLastName);
+  
+      $("ul#contacts").append("<li><span class='contact'>" + newContact.firstName + "</span></li>");
+  
+      $("input#new-first-name").val("");
+      $("input#new-last-name").val("");*/
+    });
+
+  }); 
