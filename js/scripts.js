@@ -85,13 +85,13 @@ document.getElementById("menu").innerHTML = '<div class="col-4 text-center">'+
                                                   '</p>'+
                                                 '</div>'+
                                                 '<div class="col-6">'+
-                                                  '<h6>'+
+                                                  '<p>'+
                                                     pepperoni.toppingName.toUpperCase()+'</br>'+
                                                     '<span>Small</span>'+ pepperoni.toppingPrice[0]+'</br>'+
                                                     '<span>medium</span>'+ pepperoni.toppingPrice[1]+'</br>'+
                                                     '<span>Large</span>'+ pepperoni.toppingPrice[2]+'</br>'+
                                                     '<span>Mega</span>'+ pepperoni.toppingPrice[3]+'</br>'+
-                                                  '</h6>'+
+                                                  '</p>'+
                                                 '</div>'+
                                               '</div>'+
                                               '<div class="row">'+  
