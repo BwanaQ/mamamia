@@ -7,6 +7,8 @@
   <title>Mamamia Pizzeria | Home of the best Pizza in town</title>
   <meta name="description" content="">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@100&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
     integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
   <link rel="stylesheet" href="./css/styles.css">
@@ -17,6 +19,8 @@
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
     integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
   </script>
+
+
 </head>
 <script src="./js/scripts.js" async defer></script>
 
@@ -73,14 +77,13 @@
               </div>-->
           </div>
 
-          <span class="btn btn-primary" id="add-pizza">Another Pizza</span>
+          <span class="btn btn btn-outline-success" id="add-pizza">Another Pizza</span>
 
-          <button type="submit" class="btn">Checkout</button>
+          <button type="submit" class="btn btn-success">Checkout</button>
         </form>
       </div>
       <div class="col-4">
-        step2: Checkout
-
+        Shopping Cart
         <div>
           <table class="table-dark col-12">
             <thead>
@@ -93,7 +96,22 @@
             </tbody>
           </table>
         </div>
-
+        <div class="delivery-option">
+          <div class="form-check" id="isDeliveredRadio">
+            <input type="checkbox" class="form-check-input" id="isDelivered">
+            <label class="form-check-label" for="isDelivered">I want my order Delivered.</label>
+            <div id="deliveryDetails">
+              <form id = "delivery">
+                <div class="form-group">
+                  <label for="comment">Address Details:</label>
+                  <textarea class="form-control" rows="5" id="addressDetails" required></textarea>
+                </div>
+                <button type="submit" class="btn btn-success">Submit</button>
+              </form>  
+            </div>
+          </div>
+        </form>
+        </div>
 
       </div>
       <div class="col-4">
@@ -106,49 +124,3 @@
 </body>
 
 </html>
-
-
-<!----
-********************SRATCH****************
--->
-<!--<form id="new-pizza-order">
-  <div id="new-pizzas">
-    <div class="new-pizza">
-      <div class="form-group">
-        <label for="size">Size</label>
-        <select name="size" id="size" form="new-pizza-order">
-          <option value="small">Small</option>
-          <option value="medium">Medium</option>
-          <option value="large">Large</option>
-          <option value="mega">Mega</option>
-        </select>
-      </div>
-      <div class="form-group">
-        <fieldset>      
-          <legend>Preferred Toppings</legend>      
-          <input type="checkbox" name="toppings" value="pepperonni">Pepperonni<br>      
-          <input type="checkbox" name="toppings" value="supreme">Supreme<br>      
-          <input type="checkbox" name="toppings" value="hawaiian">Hawaiian<br>      
-          <input type="checkbox" name="toppings" value="bbq">BBQ<br>      
-          <input type="checkbox" name="toppings" value="prawn">Prawn<br>      
-        </fieldset> 
-      </div>
-      <div class="form-group">
-        <fieldset>
-          <legend>Preferred Crust</legend>      
-          <input type="radio" id="thin" name="crust" value="thin">
-          <label for="thin">Thin</label><br>
-          <input type="radio" id="medium" name="crust" value="medium">
-          <label for="medium">Medium</label><br>
-          <input type="radio" id="thick" name="crust" value="thick">
-          <label for="thick">Thick</label>
-        </fieldset>   
-      </div>
-
-    </div>
-  </div>
-
-  <span class="btn btn-primary" id="add-pizza">Another Pizza</span>
-
-  <button type="submit" class="btn">Checkout</button>
-</form>-->

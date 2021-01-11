@@ -68,6 +68,7 @@ document.getElementById("menu").innerHTML = '<div class="col-4 text-center">'+
                                               '<p>'+thinCrust.crustName.toUpperCase()+'</br>'+thinCrust.crustPrice+'</p>'+
                                               '<p>'+mediumCrust.crustName.toUpperCase()+'</br>'+mediumCrust.crustPrice+'</p>'+
                                               '<p>'+thickCrust.crustName.toUpperCase()+'</br>'+thickCrust.crustPrice+'</p>'+
+                                              '<p>'+glutenFreeCrust.crustName.toUpperCase()+'</br>'+glutenFreeCrust.crustPrice+'</p>'+
                                             '</div>'+
                                             '<div class="col-4 text-center">'+
                                               '<div class="col-12 text-center">'+
@@ -84,13 +85,13 @@ document.getElementById("menu").innerHTML = '<div class="col-4 text-center">'+
                                                   '</p>'+
                                                 '</div>'+
                                                 '<div class="col-6">'+
-                                                  '<p>'+
+                                                  '<h6>'+
                                                     pepperoni.toppingName.toUpperCase()+'</br>'+
                                                     '<span>Small</span>'+ pepperoni.toppingPrice[0]+'</br>'+
                                                     '<span>medium</span>'+ pepperoni.toppingPrice[1]+'</br>'+
                                                     '<span>Large</span>'+ pepperoni.toppingPrice[2]+'</br>'+
                                                     '<span>Mega</span>'+ pepperoni.toppingPrice[3]+'</br>'+
-                                                  '</p>'+
+                                                  '</h6>'+
                                                 '</div>'+
                                               '</div>'+
                                               '<div class="row">'+  
@@ -146,8 +147,8 @@ document.getElementById("new-pizzas").innerHTML = '<div class="new-pizza">' +
                                                         '<label for="'+mediumCrust.crustName+'">'+mediumCrust.crustName+'</label><br>'+
                                                         '<input type="radio" id="'+thickCrust.crustName+'" name="crust" value="'+thickCrust.crustPrice+'">'+
                                                         '<label for="'+thickCrust.crustName+'">'+thickCrust.crustName+'</label><br>'+
-                                                        '<input type="radio" id="'+thickCrust.crustName+'" name="crust" value="'+thickCrust.crustPrice+'">'+
-                                                        '<label for="'+thickCrust.crustName+'">'+thickCrust.crustName+'</label><br>'+
+                                                        '<input type="radio" id="'+glutenFreeCrust.crustName+'" name="crust" value="'+glutenFreeCrust.crustPrice+'">'+
+                                                        '<label for="'+glutenFreeCrust.crustName+'">'+glutenFreeCrust.crustName+'</label><br>'+
                                                       '</fieldset>'+   
                                                     '</div>' +
                                                   '</div>'
@@ -183,8 +184,8 @@ $(document).ready(function() {
                                   '<label for="'+thinCrust.crustName+'">'+thinCrust.crustName+'</label><br>'+
                                   '<input type="radio" id="'+mediumCrust.crustName+'" name="crust" value="'+mediumCrust.crustPrice+'">'+
                                   '<label for="'+mediumCrust.crustName+'">'+mediumCrust.crustName+'</label><br>'+
-                                  '<input type="radio" id="'+thickCrust.crustName+'" name="crust" value="'+thickCrust.crustPrice+'">'+
-                                  '<label for="'+thickCrust.crustName+'">'+thickCrust.crustName+'</label><br>'+
+                                  '<input type="radio" id="'+glutenFreeCrust.crustName+'" name="crust" value="'+glutenFreeCrust.crustPrice+'">'+
+                                  '<label for="'+glutenFreeCrust.crustName+'">'+glutenFreeCrust.crustName+'</label><br>'+
                                 '</fieldset>'+   
                               '</div>' +
                             '</div>')});
@@ -226,17 +227,17 @@ $(document).ready(function() {
       var newPizza = new Pizza(inputtedSizeName,inputtedSizePrice, inputtedCrustName,inputtedCrustPrice,inputtedToppingNamesArray, inputtedToppingPriceArray);
 
       console.log(newPizza);
-      var order="<tr><td>" + newPizza.pizzaSizeName + 
+      var order="<tr><td>" + newPizza.pizzaSizeName +" Pizza" +
                 "</td><td>"+ newPizza.pizzaSizePrice+
                 "</td></tr>"+
-                "<tr><td>" + newPizza.crustTypeName + 
+                "<tr><td>" + newPizza.crustTypeName +" Crust" +
                 "</td><td>"+ newPizza.crustTypePrice+
                 "</td></tr>";
 
      // pizzaSizeName,pizzaSizePrice, crustTypeName,crustTypePrice,toppingNames, toppingNamesPrices)
 
         for (var i=0; i<newPizza.toppingNames.length; i++){
-        order += "<tr><td>" + newPizza.toppingNames[i] + 
+        order += "<tr><td>" + newPizza.toppingNames[i] + " Topping" +
                 "</td><td>"+ newPizza.toppingNamesPrices[i]+
                 "</td></tr>";
       }                                 
@@ -251,3 +252,10 @@ $(document).ready(function() {
   /*                
   <tr><td>Larry</td><td>Hunja</td></tr>
   */
+ //click to hide or remove form for delivery
+
+ $(document).ready(function() {
+  $("#isDeliveredRadio").change(function() {
+    $("#deliveryDetails").toggle()
+  });
+});
