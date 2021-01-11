@@ -56,26 +56,26 @@ var deliveryCharge = 100;
 
 
 //display menu
-document.getElementById("menu").innerHTML = '<div class="col-4 text-center">'+
+document.getElementById("menu").innerHTML = '<div class="col-4 text-center" id="green-menu">'+
                                               '<h3>SIZES</h3>'+
                                               '<p>'+small.pizzaName.toUpperCase()+'</br>'+small.pizzaPrice+'</p>'+
                                               '<p>'+medium.pizzaName.toUpperCase()+'</br>'+medium.pizzaPrice+'</p>'+
                                               '<p>'+large.pizzaName.toUpperCase()+'</br>'+large.pizzaPrice+'</p>'+
                                               '<p>'+mega.pizzaName.toUpperCase()+'</br>'+mega.pizzaPrice+'</p>'+
                                             '</div>'+
-                                            '<div class="col-4 text-center">'+
+                                            '<div class="col-4 text-center" id="white-menu">'+
                                               '<h3>CRUST TYPE</h3>'+
                                               '<p>'+thinCrust.crustName.toUpperCase()+'</br>'+thinCrust.crustPrice+'</p>'+
                                               '<p>'+mediumCrust.crustName.toUpperCase()+'</br>'+mediumCrust.crustPrice+'</p>'+
                                               '<p>'+thickCrust.crustName.toUpperCase()+'</br>'+thickCrust.crustPrice+'</p>'+
                                               '<p>'+glutenFreeCrust.crustName.toUpperCase()+'</br>'+glutenFreeCrust.crustPrice+'</p>'+
                                             '</div>'+
-                                            '<div class="col-4 text-center">'+
+                                            '<div class="col-4 text-center" id="red-menu">'+
                                               '<div class="col-12 text-center">'+
                                                 '<h3>TOPPINGS</h3>'+
                                               '</div>'+
                                               '<div class="row">'+  
-                                                '<div class="col-6">'+
+                                                '<div class="col-6" id=>'+
                                                   '<p>'+
                                                     vegeterian.toppingName.toUpperCase()+'</br>'+
                                                     '<span>Small</span>'+ vegeterian.toppingPrice[0]+'</br>'+

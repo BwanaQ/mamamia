@@ -1,6 +1,28 @@
-@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@100&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lobster&family=Niconne&display=swap');
+h2{
+  font-family: 'Niconne', cursive;
+}
+h3{
+  font-family: 'Lobster', cursive;
+}
 p{
   font-family: 'Josefin Sans', sans-serif;
+}
+#menu{
+  border-radius:10px;
+}  
+#green-menu{
+  background-color: #008c45;
+  color: #f4f5f0;
+}
+#white-menu{
+  background-color: #f4f5f0;
+}
+#red-menu{
+  background-color: #cd212a;
+  color: #f4f5f0;
+
 }
 #deliveryDetails{
   display: none;
