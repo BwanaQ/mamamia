@@ -13,6 +13,10 @@ function Pizza(pizzaSizeName,pizzaSizePrice, crustTypeName,crustTypePrice,toppin
   this.toppingNamesPrices = toppingNamesPrices;
 }
 
+Pizza.prototype.pizzaOrderName = function() {
+  return this.pizzaSizeName + " " + this.crustTypeName+" crust Pizza";
+}
+
 function PizzaSize(pizzaName, pizzaPrice) {
   this.pizzaName = pizzaName;
   this.pizzaPrice = pizzaPrice;
@@ -37,6 +41,7 @@ var mega = new PizzaSize("mega", 1270);
 var thinCrust = new CrustType("thin", 100);
 var mediumCrust = new CrustType("medium", 110);
 var thickCrust = new CrustType("thick",120);
+var glutenFreeCrust = new CrustType("gluten free",140);
 
 //create toppings
 var vegeterian = new Topping("vegan" , [70,100,140,200]);
@@ -135,10 +140,12 @@ document.getElementById("new-pizzas").innerHTML = '<div class="new-pizza">' +
                                                     '<div class="form-group">' +
                                                       '<fieldset>'+
                                                         '<legend>Preferred Crust</legend>'+      
-                                                        '<input type="radio" id="'+thinCrust.crustName+'" name="crust" value="'+thinCrust.crustPrice+'">'+
+                                                        '<input type="radio" id="'+thinCrust.crustName+'" name="crust" value="'+thinCrust.crustPrice+'"checked>'+
                                                         '<label for="'+thinCrust.crustName+'">'+thinCrust.crustName+'</label><br>'+
                                                         '<input type="radio" id="'+mediumCrust.crustName+'" name="crust" value="'+mediumCrust.crustPrice+'">'+
                                                         '<label for="'+mediumCrust.crustName+'">'+mediumCrust.crustName+'</label><br>'+
+                                                        '<input type="radio" id="'+thickCrust.crustName+'" name="crust" value="'+thickCrust.crustPrice+'">'+
+                                                        '<label for="'+thickCrust.crustName+'">'+thickCrust.crustName+'</label><br>'+
                                                         '<input type="radio" id="'+thickCrust.crustName+'" name="crust" value="'+thickCrust.crustPrice+'">'+
                                                         '<label for="'+thickCrust.crustName+'">'+thickCrust.crustName+'</label><br>'+
                                                       '</fieldset>'+   
@@ -182,43 +189,6 @@ $(document).ready(function() {
                               '</div>' +
                             '</div>')});
 });
-/*
-<form id="new-pizza-order">
-      <div class="form-group">
-        <label for="size">Size</label>
-        <select name="size" id="size" form="new-pizza-order">
-          <option value="small">Small</option>
-          <option value="medium">Medium</option>
-          <option value="large">Large</option>
-          <option value="mega">Mega</option>
-        </select>
-      </div>
-      <div class="form-group">
-        <fieldset>      
-          <legend>Preferred Toppings</legend>      
-          <input type="checkbox" name="toppings" value="pepperonni">Pepperonni<br>      
-          <input type="checkbox" name="toppings" value="supreme">Supreme<br>      
-          <input type="checkbox" name="toppings" value="hawaiian">Hawaiian<br>      
-          <input type="checkbox" name="toppings" value="bbq">BBQ<br>      
-          <input type="checkbox" name="toppings" value="prawn">Prawn<br>      
-        </fieldset> 
-      </div>
-      <div class="form-group">
-        <fieldset>
-          <legend>Preferred Crust</legend>      
-          <input type="radio" id="thin" name="crust" value="thin">
-          <label for="thin">Thin</label><br>
-          <input type="radio" id="medium" name="crust" value="medium">
-          <label for="medium">Medium</label><br>
-          <input type="radio" id="thick" name="crust" value="thick">
-          <label for="thick">Thick</label>
-        </fieldset>   
-      </div>
-      <div class="form-group">
-      <button type="submit" class="btn btn-success ">Proceed to checkout</button>
-    </form>
-    */
-
    $(document).ready(function() {
     $("form#new-pizza-order").submit(function(event) {
       event.preventDefault();
@@ -247,7 +217,7 @@ $(document).ready(function() {
         } else if(inputtedSizeName==="medium"){
           var arrItem2 = inputtedToppingPricesArray[j][1]
         } else if(inputtedSizeName==="large"){
-          var arrItem2 = inputtedToppingPricesArray[j][3]
+          var arrItem2 = inputtedToppingPricesArray[j][2]
         } else{
           var arrItem2 = inputtedToppingPricesArray[j][3]
         }
@@ -256,16 +226,28 @@ $(document).ready(function() {
       var newPizza = new Pizza(inputtedSizeName,inputtedSizePrice, inputtedCrustName,inputtedCrustPrice,inputtedToppingNamesArray, inputtedToppingPriceArray);
 
       console.log(newPizza);
+      var order="<tr><td>" + newPizza.pizzaSizeName + 
+                "</td><td>"+ newPizza.pizzaSizePrice+
+                "</td></tr>"+
+                "<tr><td>" + newPizza.crustTypeName + 
+                "</td><td>"+ newPizza.crustTypePrice+
+                "</td></tr>";
 
-      $("ul#pizza-order").append("<li><span>" + newPizza.pizzaSize + "</span></li>");
-      /*var inputtedLastName = $("input#new-last-name").val();
-  
-      var newContact = new Contact(inputtedFirstName, inputtedLastName);
-  
-      $("ul#contacts").append("<li><span class='contact'>" + newContact.firstName + "</span></li>");
-  
-      $("input#new-first-name").val("");
-      $("input#new-last-name").val("");*/
+     // pizzaSizeName,pizzaSizePrice, crustTypeName,crustTypePrice,toppingNames, toppingNamesPrices)
+
+        for (var i=0; i<newPizza.toppingNames.length; i++){
+        order += "<tr><td>" + newPizza.toppingNames[i] + 
+                "</td><td>"+ newPizza.toppingNamesPrices[i]+
+                "</td></tr>";
+      }                                 
+
+      $("#orders").append(order);
+      console.log(order);
+
     });
 
   }); 
+
+  /*                
+  <tr><td>Larry</td><td>Hunja</td></tr>
+  */

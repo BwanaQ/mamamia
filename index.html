@@ -1,37 +1,44 @@
-
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Mamamia Pizzeria | Home of the best Pizza in town</title>
-    <meta name="description" content="">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
-    <link rel="stylesheet" href="./css/styles.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>  </head>
-    <script src="./js/scripts.js" async defer></script>
-  <body>
-    <div class="container-fluid">
-      <div class="row text-center">
-        <div class="col-12">
-          <h2>MENU</h2>
-        </div>  
-      </div>
-      <div id="menu" class="row">
-        <!--display menu-->
-      </div>
 
-      <div class="row">
-        <div class="col-4">
-          <div> 
-            <h2>Step 1: Order Pizza</h2>
-          </div> 
-          <form id="new-pizza-order">
-            <div id="new-pizzas">
-              <!--<div class="new-pizza">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Mamamia Pizzeria | Home of the best Pizza in town</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+  <link rel="stylesheet" href="./css/styles.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous">
+  </script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
+  </script>
+</head>
+<script src="./js/scripts.js" async defer></script>
+
+<body>
+  <div class="container-fluid">
+    <div class="row text-center">
+      <div class="col-12">
+        <h2>MENU</h2>
+      </div>
+    </div>
+    <div id="menu" class="row">
+      <!--display menu-->
+    </div>
+
+    <div class="row">
+      <div class="col-4">
+        <div>
+          <h2>Step 1: Order Pizza</h2>
+        </div>
+        <form id="new-pizza-order">
+          <div id="new-pizzas">
+            <!--<div class="new-pizza">
                 <div class="form-group">
                   <label for="size">Size</label>
                   <select name="size" id="size" form="new-pizza-order">
@@ -64,37 +71,46 @@
                 </div>
           
               </div>-->
-            </div>
-          
-            <span class="btn btn-primary" id="add-pizza">Another Pizza</span>
-          
-            <button type="submit" class="btn">Checkout</button>
-          </form>
-        </div>
-        <div class="col-4">
-          <div>
-            step2: Checkout
           </div>
-          <div id="order">
-            <ul id="pizza-order">
 
-            </ul>
-          </div>
+          <span class="btn btn-primary" id="add-pizza">Another Pizza</span>
+
+          <button type="submit" class="btn">Checkout</button>
+        </form>
+      </div>
+      <div class="col-4">
+        step2: Checkout
+
+        <div>
+          <table class="table-dark col-12">
+            <thead>
+              <tr>
+                <th scope="col">Item</th>
+                <th scope="col">Price</th>
+              </tr>
+            </thead>
+            <tbody id="orders">
+            </tbody>
+          </table>
         </div>
-        <div class="col-4">
-          <div>
-            step3: Reciept
-          </div>
+
+
+      </div>
+      <div class="col-4">
+        <div>
+          step3: Reciept
         </div>
       </div>
     </div>
-  </body>
+  </div>
+</body>
+
 </html>
 
 
- <!----
+<!----
 ********************SRATCH****************
---> 
+-->
 <!--<form id="new-pizza-order">
   <div id="new-pizzas">
     <div class="new-pizza">
