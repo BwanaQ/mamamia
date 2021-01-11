@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Lobster&family=Niconne&display=swap');
-h2{
+h2,legend{
   font-family: 'Niconne', cursive;
 }
 h3{

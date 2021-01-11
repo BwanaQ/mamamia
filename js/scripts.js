@@ -56,26 +56,26 @@ var deliveryCharge = 100;
 
 
 //display menu
-document.getElementById("menu").innerHTML = '<div class="col-4 text-center" id="green-menu">'+
+document.getElementById("menu").innerHTML = '<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 text-center" id="green-menu">'+
                                               '<h3>SIZES</h3>'+
                                               '<p>'+small.pizzaName.toUpperCase()+'</br>'+small.pizzaPrice+'</p>'+
                                               '<p>'+medium.pizzaName.toUpperCase()+'</br>'+medium.pizzaPrice+'</p>'+
                                               '<p>'+large.pizzaName.toUpperCase()+'</br>'+large.pizzaPrice+'</p>'+
                                               '<p>'+mega.pizzaName.toUpperCase()+'</br>'+mega.pizzaPrice+'</p>'+
                                             '</div>'+
-                                            '<div class="col-4 text-center" id="white-menu">'+
+                                            '<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 text-center" id="white-menu">'+
                                               '<h3>CRUST TYPE</h3>'+
                                               '<p>'+thinCrust.crustName.toUpperCase()+'</br>'+thinCrust.crustPrice+'</p>'+
                                               '<p>'+mediumCrust.crustName.toUpperCase()+'</br>'+mediumCrust.crustPrice+'</p>'+
                                               '<p>'+thickCrust.crustName.toUpperCase()+'</br>'+thickCrust.crustPrice+'</p>'+
                                               '<p>'+glutenFreeCrust.crustName.toUpperCase()+'</br>'+glutenFreeCrust.crustPrice+'</p>'+
                                             '</div>'+
-                                            '<div class="col-4 text-center" id="red-menu">'+
+                                            '<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 text-center" id="red-menu">'+
                                               '<div class="col-12 text-center">'+
                                                 '<h3>TOPPINGS</h3>'+
                                               '</div>'+
                                               '<div class="row">'+  
-                                                '<div class="col-6" id=>'+
+                                                '<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">'+
                                                   '<p>'+
                                                     vegeterian.toppingName.toUpperCase()+'</br>'+
                                                     '<span>Small</span>'+ vegeterian.toppingPrice[0]+'</br>'+
@@ -84,7 +84,7 @@ document.getElementById("menu").innerHTML = '<div class="col-4 text-center" id="
                                                     '<span>Mega</span>'+ vegeterian.toppingPrice[3]+'</br>'+
                                                   '</p>'+
                                                 '</div>'+
-                                                '<div class="col-6">'+
+                                                '<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">'+
                                                   '<p>'+
                                                     pepperoni.toppingName.toUpperCase()+'</br>'+
                                                     '<span>Small</span>'+ pepperoni.toppingPrice[0]+'</br>'+
@@ -95,7 +95,7 @@ document.getElementById("menu").innerHTML = '<div class="col-4 text-center" id="
                                                 '</div>'+
                                               '</div>'+
                                               '<div class="row">'+  
-                                                 '<div class="col-6">'+
+                                                 '<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">'+
                                                     '<p>'+
                                                       hawaiian.toppingName.toUpperCase()+'</br>'+
                                                       '<span>Small</span>'+ hawaiian.toppingPrice[0]+'</br>'+
@@ -104,7 +104,7 @@ document.getElementById("menu").innerHTML = '<div class="col-4 text-center" id="
                                                       '<span>Mega</span>'+ hawaiian.toppingPrice[3]+'</br>'+
                                                     '</p>'+
                                                   '</div>'+
-                                                  '<div class="col-6">'+
+                                                  '<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">'+
                                                     '<p>'+
                                                       bbq.toppingName.toUpperCase()+'</br>'+
                                                       '<span>Small</span>'+ bbq.toppingPrice[0]+'</br>'+
