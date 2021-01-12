@@ -117,42 +117,6 @@ document.getElementById("menu").innerHTML = '<div class="col-lg-4 col-md-4 col-s
                                               '</div>'    
 
 //create form via js
-document.getElementById("new-pizzas").innerHTML = '<div class="new-pizza">' +
-                                                    '<div class="form-group">' +
-                                                      '<label for="size">Size</label>' +
-                                                      '<select name="size" id="size" form="new-pizza-order">'+
-                                                      '<option value="'+small.pizzaPrice+'">'+small.pizzaName+'</option>'+
-                                                      '<option value="'+medium.pizzaPrice+'">'+medium.pizzaName+'</option>'+
-                                                      '<option value="'+large.pizzaPrice+'">'+large.pizzaName+'</option>'+
-                                                      '<option value="'+mega.pizzaPrice+'">'+mega.pizzaName+'</option>'+
-                                                    '</select>'+
-
-                                                    '</div>' +
-                                                    '<div class="form-group">' +
-                                                      '<fieldset>'+      
-                                                        '<legend>Preferred Toppings</legend>'+      
-                                                        '<input type="checkbox" name="toppings" value="'+vegeterian.toppingPrice+'"><label>'+vegeterian.toppingName+'</label><br>'+      
-                                                        '<input type="checkbox" name="toppings" value="'+pepperoni.toppingPrice+'"><label>'+pepperoni.toppingName+'</label><br>'+      
-                                                        '<input type="checkbox" name="toppings" value="'+hawaiian.toppingPrice+'"><label>'+hawaiian.toppingName+'</label><br>'+      
-                                                        '<input type="checkbox" name="toppings" value="'+bbq.toppingPrice+'"><label>'+bbq.toppingName+'</label><br>'+      
-                                                        '<input type="checkbox" name="toppings" value="'+prawn.toppingPrice+'"><label>'+prawn.toppingName+'</label><br>'+      
-                                                      '</fieldset>'+ 
-                                                    '</div>' +
-                                                    '<div class="form-group">' +
-                                                      '<fieldset>'+
-                                                        '<legend>Preferred Crust</legend>'+      
-                                                        '<input type="radio" id="'+thinCrust.crustName+'" name="crust" value="'+thinCrust.crustPrice+'"checked>'+
-                                                        '<label for="'+thinCrust.crustName+'">'+thinCrust.crustName+'</label><br>'+
-                                                        '<input type="radio" id="'+mediumCrust.crustName+'" name="crust" value="'+mediumCrust.crustPrice+'">'+
-                                                        '<label for="'+mediumCrust.crustName+'">'+mediumCrust.crustName+'</label><br>'+
-                                                        '<input type="radio" id="'+thickCrust.crustName+'" name="crust" value="'+thickCrust.crustPrice+'">'+
-                                                        '<label for="'+thickCrust.crustName+'">'+thickCrust.crustName+'</label><br>'+
-                                                        '<input type="radio" id="'+glutenFreeCrust.crustName+'" name="crust" value="'+glutenFreeCrust.crustPrice+'">'+
-                                                        '<label for="'+glutenFreeCrust.crustName+'">'+glutenFreeCrust.crustName+'</label><br>'+
-                                                      '</fieldset>'+   
-                                                    '</div>' +
-                                                  '</div>'
-
 //form for new pizza
 $(document).ready(function() {
   $("#add-pizza").click(function() {
