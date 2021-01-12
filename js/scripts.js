@@ -32,7 +32,7 @@ function Topping(toppingName, toppingPrice){
   this.toppingPrice = toppingPrice;
 }
 //create Pizzas
-var small = new PizzaSize("small", 551);
+var small = new PizzaSize("small", 550);
 var medium = new PizzaSize("medium", 830);
 var large = new PizzaSize("large",1050);
 var mega = new PizzaSize("mega", 1270);
@@ -57,14 +57,14 @@ var deliveryCharge = 100;
 
 //display menu
 document.getElementById("menu").innerHTML = '<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 text-center" id="green-menu">'+
-                                              '<h3>SIZES</h3>'+
+                                              '<h3>Sizes</h3>'+
                                               '<p>'+small.pizzaName.toUpperCase()+'</br>'+small.pizzaPrice+'</p>'+
                                               '<p>'+medium.pizzaName.toUpperCase()+'</br>'+medium.pizzaPrice+'</p>'+
                                               '<p>'+large.pizzaName.toUpperCase()+'</br>'+large.pizzaPrice+'</p>'+
                                               '<p>'+mega.pizzaName.toUpperCase()+'</br>'+mega.pizzaPrice+'</p>'+
                                             '</div>'+
                                             '<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 text-center" id="white-menu">'+
-                                              '<h3>CRUST TYPE</h3>'+
+                                              '<h3>Crusts</h3>'+
                                               '<p>'+thinCrust.crustName.toUpperCase()+'</br>'+thinCrust.crustPrice+'</p>'+
                                               '<p>'+mediumCrust.crustName.toUpperCase()+'</br>'+mediumCrust.crustPrice+'</p>'+
                                               '<p>'+thickCrust.crustName.toUpperCase()+'</br>'+thickCrust.crustPrice+'</p>'+
@@ -72,7 +72,7 @@ document.getElementById("menu").innerHTML = '<div class="col-lg-4 col-md-4 col-s
                                             '</div>'+
                                             '<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 text-center" id="red-menu">'+
                                               '<div class="col-12 text-center">'+
-                                                '<h3>TOPPINGS</h3>'+
+                                                '<h3>Toppings</h3>'+
                                               '</div>'+
                                               '<div class="row">'+  
                                                 '<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">'+

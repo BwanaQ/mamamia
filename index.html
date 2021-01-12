@@ -9,14 +9,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <link rel="preconnect" href="https://fonts.gstatic.com">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
-    integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoPVmmDGMN5t9UJ0Z" crossorigin="anonymous">
   <link rel="stylesheet" href="./css/styles.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
     integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous">
   </script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
-    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIMB07jRM" crossorigin="anonymous">
   </script>
 
 
@@ -41,6 +41,45 @@
         </div>
         <form id="new-pizza-order">
           <div id="new-pizzas">
+            <div class="new-pizza">
+              <div class="form-group">
+                <label for="size">Size</label>
+                <select name="size" id="size" form="new-pizza-order">
+                  <option value="550">small</option>
+                  <option value="830">medium</option>
+                  <option value="1050">large</option>
+                  <option value="1270">mega</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <fieldset>
+                  <legend>Preferred Toppings</legend>
+                  <input type="checkbox" name="toppings" value="70,100,140,200">
+                  <label>vegan</label><br>
+                  <input type="checkbox" name="toppings" value="100,150,200,250">
+                  <label>pepperoni</label><br>
+                  <input type="checkbox" name="toppings" value="70,90,110,130">
+                  <label>hawaiian</label><br>
+                  <input type="checkbox" name="toppings" value="170,200,230,270">
+                  <label>bbq</label><br>
+                  <input type="checkbox" name="toppings" value="200,230,260,300">
+                  <label>prawn</label><br>
+                </fieldset>
+              </div>
+              <div class="form-group">
+                <fieldset>
+                  <legend>Preferred Crust</legend>
+                  <input type="radio" id="thin" name="crust" value="100" checked="">
+                  <label for="thin">thin</label><br>
+                  <input type="radio" id="medium" name="crust" value="110">
+                  <label for="medium">medium</label><br>
+                  <input type="radio" id="thick" name="crust" value="120">
+                  <label for="thick">thick</label><br>
+                  <input type="radio" id="gluten free" name="crust" value="140">
+                  <label for="gluten free">gluten free</label><br>
+                </fieldset>
+              </div>
+            </div>
           </div>
 
           <span class="btn btn btn-outline-success" id="add-pizza">Another Pizza</span>
@@ -90,3 +129,42 @@
 </body>
 
 </html>
+<!--
+<div class="new-pizza"> 
+  <div class="form-group"> 
+    <label for="size">Size</label> 
+    <select name="size" id="size" form="new-pizza-order">
+    '<option value="'small.pizzaPrice'">'small.pizzaName'</option>'
+    '<option value="'medium.pizzaPrice'">'medium.pizzaName'</option>'
+    '<option value="'large.pizzaPrice'">'large.pizzaName'</option>'
+    '<option value="'mega.pizzaPrice'">'mega.pizzaName'</option>'
+  '</select>'
+
+  '</div>' 
+  '<div class="form-group">' 
+    '<fieldset>'      
+      '<legend>Preferred Toppings</legend>'      
+      '<input type="checkbox" name="toppings" value="'vegeterian.toppingPrice'"><label>'vegeterian.toppingName'</label><br>'      
+      '<input type="checkbox" name="toppings" value="'pepperoni.toppingPrice'"><label>'pepperoni.toppingName'</label><br>'      
+      '<input type="checkbox" name="toppings" value="'hawaiian.toppingPrice'"><label>'hawaiian.toppingName'</label><br>'      
+      '<input type="checkbox" name="toppings" value="'bbq.toppingPrice'"><label>'bbq.toppingName'</label><br>'      
+      '<input type="checkbox" name="toppings" value="'prawn.toppingPrice'"><label>'prawn.toppingName'</label><br>'      
+    '</fieldset>' 
+  '</div>' 
+  '<div class="form-group">' 
+    '<fieldset>'
+      '<legend>Preferred Crust</legend>'      
+      '<input type="radio" id="'thinCrust.crustName'" name="crust" value="'thinCrust.crustPrice'"checked>'
+      '<label for="'thinCrust.crustName'">'thinCrust.crustName'</label><br>'
+      '<input type="radio" id="'mediumCrust.crustName'" name="crust" value="'mediumCrust.crustPrice'">'
+      '<label for="'mediumCrust.crustName'">'mediumCrust.crustName'</label><br>'
+      '<input type="radio" id="'thickCrust.crustName'" name="crust" value="'thickCrust.crustPrice'">'
+      '<label for="'thickCrust.crustName'">'thickCrust.crustName'</label><br>'
+      '<input type="radio" id="'glutenFreeCrust.crustName'" name="crust" value="'glutenFreeCrust.crustPrice'">'
+      '<label for="'glutenFreeCrust.crustName'">'glutenFreeCrust.crustName'</label><br>'
+    '</fieldset>'   
+  '</div>' 
+'</div>'
+
+
+-->
