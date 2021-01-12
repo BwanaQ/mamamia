@@ -1,6 +1,5 @@
-
 //create empty order
-order = [];
+pizzaOrder = [];
 
 //create all Pizza constructors
 ``
@@ -120,10 +119,65 @@ document.getElementById("menu").innerHTML = '<div class="col-lg-4 col-md-4 col-s
 //form for new pizza
 $(document).ready(function() {
   $("#add-pizza").click(function() {
+    var inputtedSizeName = $("select#size option:selected").text();
+    var inputtedSizePrice = $("select#size").val();
+    var inputtedCrustName = $("input[name='crust']:checked+label").text();
+    var inputtedCrustPrice = $("input[name='crust']:checked").val();
+    var inputtedToppingsPricesRaw=$('input[name="toppings"]:checked').map(function(){
+      return $(this).val();
+    }).get();
+    var inputtedToppingPricesArray=[];
+    for (var i =0; i<inputtedToppingsPricesRaw.length; i++){
+      var arrItem=inputtedToppingsPricesRaw[i].split(',');
+      inputtedToppingPricesArray.push(arrItem);
+    }
+    var inputtedToppingNamesArray=$('input[name="toppings"]:checked').map(function(){
+      return $(this).next('label').text();
+    }).get();
+    //select array value based on size
+    var inputtedToppingPriceArray=[];
+
+    for(var j=0; j<inputtedToppingNamesArray.length;j++){
+      if(inputtedSizeName==="small"){
+        var arrItem2 = inputtedToppingPricesArray[j][0]
+      } else if(inputtedSizeName==="medium"){
+        var arrItem2 = inputtedToppingPricesArray[j][1]
+      } else if(inputtedSizeName==="large"){
+        var arrItem2 = inputtedToppingPricesArray[j][2]
+      } else{
+        var arrItem2 = inputtedToppingPricesArray[j][3]
+      }
+      inputtedToppingPriceArray.push(arrItem2);
+    }
+    var newPizza = new Pizza(inputtedSizeName,inputtedSizePrice, inputtedCrustName,inputtedCrustPrice,inputtedToppingNamesArray, inputtedToppingPriceArray);
+
+    console.log(newPizza);
+    pizzaOrder.push(newPizza)
+    var order="<tr><td>" + newPizza.pizzaSizeName +" Pizza" +
+              "</td><td>"+ newPizza.pizzaSizePrice+
+              "</td></tr>"+
+              "<tr><td>" + newPizza.crustTypeName +" Crust" +
+              "</td><td>"+ newPizza.crustTypePrice+
+              "</td></tr>";
+
+   // pizzaSizeName,pizzaSizePrice, crustTypeName,crustTypePrice,toppingNames, toppingNamesPrices)
+
+      for (var i=0; i<newPizza.toppingNames.length; i++){
+      order += "<tr><td>" + newPizza.toppingNames[i] + " Topping" +
+              "</td><td>"+ newPizza.toppingNamesPrices[i]+
+              "</td></tr>";
+    }                                 
+
+    $("#orders").append(order);
+    console.log(pizzaOrder);
+    $("select#size").val("");
+    $("input[name='crust']").val("");
+    $('input[name="toppings"]').val("");
+
     $("#new-pizzas").append('<div class="new-pizza">' +
                               '<div class="form-group">' +
                                 '<label for="size">Size</label>' +
-                                '<select name="size" id="size" form="new-pizza-order">'+
+                                '<select class="form-control" name="size" id="size" form="new-pizza-order">'+
                                 '<option value="'+small.pizzaPrice+'">'+small.pizzaName+'</option>'+
                                 '<option value="'+medium.pizzaPrice+'">'+medium.pizzaName+'</option>'+
                                 '<option value="'+large.pizzaPrice+'">'+large.pizzaName+'</option>'+
@@ -157,8 +211,10 @@ $(document).ready(function() {
    $(document).ready(function() {
     $("form#new-pizza-order").submit(function(event) {
       event.preventDefault();
-
-      var inputtedSizeName = $("select#size option:selected").text();
+      for (var i=0; i<pizzaOrder.length; i++){
+        console.log(Pizza[i]);
+      }
+      /*var inputtedSizeName = $("select#size option:selected").text();
       var inputtedSizePrice = $("select#size").val();
       var inputtedCrustName = $("input[name='crust']:checked+label").text();
       var inputtedCrustPrice = $("input[name='crust']:checked").val();
@@ -191,6 +247,7 @@ $(document).ready(function() {
       var newPizza = new Pizza(inputtedSizeName,inputtedSizePrice, inputtedCrustName,inputtedCrustPrice,inputtedToppingNamesArray, inputtedToppingPriceArray);
 
       console.log(newPizza);
+      pizzaOrder.push(newPizza)
       var order="<tr><td>" + newPizza.pizzaSizeName +" Pizza" +
                 "</td><td>"+ newPizza.pizzaSizePrice+
                 "</td></tr>"+
@@ -207,16 +264,13 @@ $(document).ready(function() {
       }                                 
 
       $("#orders").append(order);
-      console.log(order);
+      console.log(pizzaOrder);
+      */
 
     });
 
   }); 
 
-  /*                
-  <tr><td>Larry</td><td>Hunja</td></tr>
-  */
- //click to hide or remove form for delivery
 
  $(document).ready(function() {
   $("#isDeliveredRadio").change(function() {
