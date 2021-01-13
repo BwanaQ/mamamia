@@ -150,17 +150,13 @@ $(document).ready(function(){
                                 '</fieldset>'+
                               '</div>'+
                               '<div class="form-group">'+
-                                '<fieldset>'+
-                                 '<legend>Preferred Crust</legend>'+
-                                  '<input type="radio" id="thin" name="crust" value="100" checked="">'+
-                                  '<label for="thin">thin</label><br>'+
-                                  '<input type="radio" id="medium" name="crust" value="110">'+
-                                  '<label for="medium">medium</label><br>'+
-                                  '<input type="radio" id="thick" name="crust" value="120">'+
-                                  '<label for="thick">thick</label><br>'+
-                                  '<input type="radio" id="gluten free" name="crust" value="140">'+
-                                  '<label for="gluten free">gluten free</label><br>'+
-                                '</fieldset>'+
+                                '<label for="crust">Size</label>'+
+                                '<select class="form-control crust" name="crust" id="crust" form="order">'+
+                                  '<option value="100">thin</option>'+
+                                  '<option value="110">medium</option>'+
+                                  '<option value="120">thick</option>'+
+                                  '<option value="140">gluten free</option>'+
+                                '</select>'+
                               '</div>'+
                             '</div>'
 
@@ -187,8 +183,8 @@ $(document).ready(function(){
     $(".new-pizza").each(function(){
       var inputtedSizeName = $(this).find("select.size option:selected").text();
       var inputtedSizePrice = $(this).find("select.size option:selected").val();  
-      var inputtedCrustName = $(this).find("input[name='crust']:checked+label").text();
-      var inputtedCrustPrice = $(this).find("input[name='crust']:checked").val();
+      var inputtedCrustName = $(this).find("select.crust option:selected").text();
+      var inputtedCrustPrice = $(this).find("select.crust option:selected").val();
       
       var inputtedToppingsPricesRaw =[]; //initialization
       inputtedToppingsPricesRaw=$(this).find('input[name="toppings"]:checked').map(function(){
