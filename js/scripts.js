@@ -150,7 +150,7 @@ $(document).ready(function(){
                                 '</fieldset>'+
                               '</div>'+
                               '<div class="form-group">'+
-                                '<label for="crust">Size</label>'+
+                                '<label for="crust">Crust</label>'+
                                 '<select class="form-control crust" name="crust" id="crust" form="order">'+
                                   '<option value="100">thin</option>'+
                                   '<option value="110">medium</option>'+
@@ -242,11 +242,10 @@ $(document).ready(function(){
         total +=parseInt(newPizza.toppingNamesPrices[i])
       }
     $("#orders").append(orderItem);    
+
     }); 
-    $("#orders").append("<tr>"+
-                          "<td>" + "<strong>Total</strong>"+"</td>"+
-                          "<td>"+ total+"</td>"+
-                        "</tr>")
+    $("#total").append("Your total is <strong>"+ total+"</strong>. Thank you.")
+                        
   });
   resetFields();
 });

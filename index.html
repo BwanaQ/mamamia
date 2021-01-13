@@ -47,7 +47,7 @@
           <div class="delivery-option">
             <div class="form-check" id="isDeliveredRadio">
               <input type="checkbox" class="form-check-input" id="isDelivered" name="isDelivered">
-              <label class="form-check-label" for="isDelivered">I want my order Delivered.</label>
+              <label class="form-check-label" for="isDelivered">I want my order Delivered (@100 within CBD).</label>
               <div id="deliveryDetails">
                   <div class="form-group">
                     <label for="comment">Address Details:</label>
@@ -61,11 +61,11 @@
           </div>
           <span class="btn btn btn-outline-success" id="add-pizza">Add Pizza</span>
 
-          <button type="submit" class="btn btn-success">Checkout</button>
+          <button type="submit" class="btn btn-success">Done</button>
         </form>
       </div>
       <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
-        <h2>Step 2: Delivery Options</h2>
+        <h2>Step 2: Details</h2>
         <div>
           <table class="table-dark col-12">
             <thead>
@@ -77,11 +77,15 @@
             <tbody id="orders">
             </tbody>
           </table>
+  
         </div>
       </div>
       <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
         <div>
-          <h2>Step3: Checkout</h2>
+          <h2>Step3: Total</h2>
+          <div id="total">
+
+          </div>
         </div>
       </div>
     </div>
