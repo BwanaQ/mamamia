@@ -43,51 +43,23 @@
         <div>
           <h2>Step 1: Order Pizza</h2>
         </div>
-        <form id="new-pizza-order">
-          <div id="new-pizzas">
-            <div class="new-pizza">
-
-              <div class="form-group">
-                <label for="size">Size</label>
-                <select class="form-control" name="size" id="size" form="new-pizza-order">
-                  <option value="550">small</option>
-                  <option value="830">medium</option>
-                  <option value="1050">large</option>
-                  <option value="1270">mega</option>
-                </select>
-              </div>
-              <div class="form-group">
-                <fieldset>
-                  <legend>Preferred Toppings</legend>
-                  <input type="checkbox" name="toppings" value="70,100,140,200">
-                  <label>vegan</label><br>
-                  <input type="checkbox" name="toppings" value="100,150,200,250">
-                  <label>pepperoni</label><br>
-                  <input type="checkbox" name="toppings" value="70,90,110,130">
-                  <label>hawaiian</label><br>
-                  <input type="checkbox" name="toppings" value="170,200,230,270">
-                  <label>bbq</label><br>
-                  <input type="checkbox" name="toppings" value="200,230,260,300">
-                  <label>prawn</label><br>
-                </fieldset>
-              </div>
-              <div class="form-group">
-                <fieldset>
-                  <legend>Preferred Crust</legend>
-                  <input type="radio" id="thin" name="crust" value="100" checked="">
-                  <label for="thin">thin</label><br>
-                  <input type="radio" id="medium" name="crust" value="110">
-                  <label for="medium">medium</label><br>
-                  <input type="radio" id="thick" name="crust" value="120">
-                  <label for="thick">thick</label><br>
-                  <input type="radio" id="gluten free" name="crust" value="140">
-                  <label for="gluten free">gluten free</label><br>
-                </fieldset>
+        <form id="new-order">
+          <div class="delivery-option">
+            <div class="form-check" id="isDeliveredRadio">
+              <input type="checkbox" class="form-check-input" id="isDelivered" name="isDelivered">
+              <label class="form-check-label" for="isDelivered">I want my order Delivered.</label>
+              <div id="deliveryDetails">
+                  <div class="form-group">
+                    <label for="comment">Address Details:</label>
+                    <textarea class="form-control" rows="5" id="addressDetails"></textarea>
+                  </div>
               </div>
             </div>
           </div>
-
-          <span class="btn btn btn-outline-success" id="add-pizza">Another Pizza</span>
+          <div id="new-pizzas">
+      
+          </div>
+          <span class="btn btn btn-outline-success" id="add-pizza">Add Pizza</span>
 
           <button type="submit" class="btn btn-success">Checkout</button>
         </form>
@@ -106,23 +78,6 @@
             </tbody>
           </table>
         </div>
-        <div class="delivery-option">
-          <div class="form-check" id="isDeliveredRadio">
-            <input type="checkbox" class="form-check-input" id="isDelivered">
-            <label class="form-check-label" for="isDelivered">I want my order Delivered.</label>
-            <div id="deliveryDetails">
-              <form id = "delivery">
-                <div class="form-group">
-                  <label for="comment">Address Details:</label>
-                  <textarea class="form-control" rows="5" id="addressDetails" required></textarea>
-                </div>
-                <button type="submit" class="btn btn-success">Submit</button>
-              </form>  
-            </div>
-          </div>
-        </form>
-        </div>
-
       </div>
       <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
         <div>
